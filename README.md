@@ -1,4 +1,4 @@
-# Open edX Brand Package Interface
+# Open edX Brand Package Interface Customized for True Course Simulations
 
 This project contains the default branding assets and style used in Open edX
 applications. It is published on npm as `@openedx/brand-openedx`.
