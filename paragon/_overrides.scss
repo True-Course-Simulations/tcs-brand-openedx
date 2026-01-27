@@ -1,2 +1,24 @@
 // Use this file to define style overrides for @edx/paragon
 // This file is included after all Paragon styles, but should generally avoid using private mixins in Paragon.
+// Links: visible hover, no ugly default underlines
+a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+a:hover {
+  opacity: 0.9;
+}
+
+// Buttons: make primary feel intentional + consistent
+.btn-primary {
+  font-weight: 600;
+}
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(#57b1e4, 0.45);
+}
+
+// Cards: subtle border + shadow (don’t overdo it)
+.card {
+  border-color: rgba(#587182, 0.25);
+}
