@@ -1,16 +1,21 @@
 // Use this file to set SASS variables for @edx/paragon
 // See _variables.scss in https://github.com/openedx/paragon/blob/master/scss/core/ for reference
-// --- TCS palette ---
+
+// TCS palette
 $tcs-red: #d52028;
 $tcs-grey: #587182;
 $tcs-light-blue: #57b1e4;
 $tcs-dark-blue: #144ea2;
 $tcs-charcoal: #1b1e1c;
 
-// --- Core theme mapping (Bootstrap/Paragon) ---
-$primary: $tcs-red;
+// Core mapping
+$primary: $tcs-dark-blue;
+$danger: $tcs-red;
 $link-color: $tcs-dark-blue;
 $body-color: $tcs-charcoal;
+
+$info: $tcs-light-blue;
+$secondary: $tcs-grey;
 
 // Softer neutrals so the UI doesn’t look harsh
 $secondary: $tcs-grey;
@@ -27,3 +32,11 @@ $focus-ring-color: rgba($tcs-light-blue, 0.45);
 // Optional: slightly rounder UI feels modern
 $border-radius: 0.75rem;
 $border-radius-lg: 1rem;
+
+$font-family-sans-serif: "Mulish", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+$headings-font-weight: 800;
+$font-weight-semibold: 700;
+
+// Optional polish: makes it feel more “marketing site”
+$headings-letter-spacing: -0.02em;
