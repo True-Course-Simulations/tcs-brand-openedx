@@ -13,30 +13,34 @@ $primary: $tcs-dark-blue;
 $danger: $tcs-red;
 $link-color: $tcs-dark-blue;
 $body-color: $tcs-charcoal;
-
 $info: $tcs-light-blue;
 $secondary: $tcs-grey;
-
-// Softer neutrals so the UI doesn’t look harsh
-$secondary: $tcs-grey;
-
-// If your Paragon/Bootstrap build uses these:
-$info: $tcs-light-blue;
 
 // Make borders + subtle UI feel “designed”
 $border-color: rgba($tcs-grey, 0.35);
 
-// Focus rings: this is a huge “polish” lever
+// Focus rings
 $focus-ring-color: rgba($tcs-light-blue, 0.45);
 
-// Optional: slightly rounder UI feels modern
-$border-radius: 0.75rem;
-$border-radius-lg: 1rem;
+// Slight rounding for buttons and inputs
+$border-radius: 0.625rem;
+$border-radius-lg: 0.75rem;
 
-$font-family-sans-serif: "Mulish", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+// Typography
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+$font-weight-base: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$line-height-base: 1.6;
+$headings-letter-spacing: -0.01em;
 
-$headings-font-weight: 800;
-$font-weight-semibold: 700;
-
-// Optional polish: makes it feel more “marketing site”
-$headings-letter-spacing: -0.02em;
+// Buttons: 40–44px height, 14–15px text
+$btn-font-size: 0.9375rem;
+$btn-font-weight: 600;
+$btn-line-height: 1.45;
+$btn-padding-y: 0.55rem;
+$btn-padding-x: 1rem;
+$btn-border-radius: $border-radius;
