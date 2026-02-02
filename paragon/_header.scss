@@ -9,7 +9,7 @@
         .logo-holder {
             margin: 15px 0 15px 35px;
             img {
-                height: 21px;
+                height: $brand-logo-height-sm;
             }
         }
         .menu {
@@ -146,7 +146,7 @@
                 margin: 0 18px 0 0 !important;
             }
             img {
-                height: 21px;
+                height: $brand-logo-height;
             }
        }
         .main-nav {
@@ -460,8 +460,10 @@
         a.mx-auto {
             margin: 0 38px 0 0 !important;
             img {
-                height: 21px !important;
-                margin: 0 !important;
+            height: $brand-logo-height;
+            width: auto;
+            margin: 0 !important;
+            display: block;
             }
         }
         .flex-grow-1 + .btn-inverse-primary {
