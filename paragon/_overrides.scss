@@ -13,31 +13,29 @@ a:hover {
 // Buttons: make primary feel intentional + consistent
 .btn {
   font-weight: 600;
-  border-radius: 0.625rem;
+  border-radius: $border-radius; // or var(--tcs-radius) if you went CSS-variable route
 }
 
 .btn-primary {
-  background-color: #144ea2;
-  border-color: #144ea2;
+  background-color: $tcs-dark-blue;
+  border-color: $tcs-dark-blue;
 }
-
 .btn-primary:hover {
   filter: brightness(0.92);
 }
 
 .btn-outline-primary {
-  color: #144ea2;
-  border-color: #144ea2;
+  color: $tcs-dark-blue;
+  border-color: $tcs-dark-blue;
 }
-
 .btn-outline-primary:hover {
-  background-color: rgba(20, 78, 162, 0.08);
+  background-color: rgba($tcs-dark-blue, 0.08);
 }
 
 // Make top nav feel more like a branded product header
 .site-header,
 .navbar {
-  border-bottom: 1px solid rgba(88, 113, 130, 0.25);
+  border-bottom: 1px solid rgba($tcs-grey, 0.25);
 }
 
 .navbar-nav .nav-link {
@@ -46,7 +44,7 @@ a:hover {
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link[aria-current="page"] {
-  color: #144ea2;
+  color: $tcs-dark-blue;
 }
 
 // Make header logo larger across MFEs
@@ -56,7 +54,188 @@ header .logo img,
 header .logo svg,
 .navbar-brand img,
 .navbar-brand svg {
-  height: 44px;     // try 44–56
+  height: 44px;
   max-height: 56px;
   width: auto;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+code, pre, kbd, samp, .text-monospace {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root .container-xl {
+  max-width: 1600px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+#root .btn:before { display: none !important; }
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba($tcs-light-blue, 0.45);
+}
+
+// detail page
+#root {
+  nav[aria-label=breadcrumb] {
+    background: rgba($tcs-light-blue, 0.18); // was: var(--pgn-color-primary-light)
+    // (If you want it closer to your primary instead of light blue, use rgba($tcs-dark-blue, 0.12);)
+  }
+
+  .w-100.d-flex.align-items-center {
+    div.d-flex.ml-auto {
+      .ml-1, > div {
+        button {
+          border: 1px solid $tcs-border !important; // was: #D1D5DB
+        }
+
+        button svg path {
+          fill: $tcs-icon; // was: #9CA3AF
+        }
+
+        button[aria-label="Show notification tray"] {
+          border: 1px solid $tcs-border !important; // was: #D1D5DB
+
+          span.pgn__icon {
+            border: 2px solid $tcs-icon; // was: #9CA3AF
+
+            &:after {
+              box-shadow: inset 0 0 0 4px $tcs-icon, 0 -2px 0 0 $tcs-icon; // was: #9CA3AF
+            }
+
+            &:before {
+              background: $tcs-icon; // was: #9CA3AF
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #courseware-sequenceNavigation {
+    + div.d-flex.ml-auto {
+      .mt-3, .ml-1 {
+        button {
+          border: 1px solid $tcs-border !important; // was: #D1D5DB
+        }
+
+        &:first-child button svg path {
+          fill: $tcs-icon; // was: #9CA3AF
+        }
+
+        button span.pgn__icon {
+          border: 2px solid $tcs-icon; // was: #9CA3AF
+
+          &:after {
+            box-shadow: inset 0 0 0 4px $tcs-icon, 0 -2px 0 0 $tcs-icon; // was: #9CA3AF
+          }
+
+          &:before {
+            background: $tcs-icon; // was: #9CA3AF
+          }
+        }
+      }
+    }
+  }
+
+  .sequence-container .sequence #courseware-sequenceNavigation {
+    .sequence-navigation-tabs button.complete {
+      background: rgba($tcs-light-blue, 0.18); // was: var(--pgn-color-primary-light)
+      color: $tcs-dark-blue;                  // was: var(--pgn-color-primary-base)
+
+      &:after {
+        background: rgba($tcs-light-blue, 0.18) !important; // was primary-light
+      }
+
+      &.active:after {
+        background: $tcs-dark-blue !important; // was primary-base
+      }
+
+      .text-success {
+        color: $tcs-dark-blue !important; // was primary-base
+      }
+    }
+  }
+}
+
+#root .unit-container {
+  max-width: 100% !important;
+}
+
+// modal style
+.pgn__modal.pgn__modal-default {
+  .bg-white {
+    h4 {
+      color: $tcs-charcoal; // was: var(--pgn-color-text-base)
+    }
+
+    p {
+      color: rgba($tcs-charcoal, 0.85); // was: var(--pgn-color-text-primary)
+    }
+
+    .pgn__action-row button {
+      &.btn-tertiary {
+        border: 1px solid $tcs-border !important; // was: #D1D5DB
+      }
+    }
+
+    .pgn__form-control-set {
+      .pgn__form-radio {
+        .pgn__form-label {
+          color: $tcs-charcoal; // was: #191B23
+        }
+
+        .pgn__form-radio-input {
+          border: 1px solid $tcs-border-strong; // was: #C4C7CF
+        }
+      }
+    }
+  }
+}
+
+// style sheet component
+#sheet-root.sheet-container {
+  .pgn__sheet-component {
+    .filter-form-row {
+      .filter-form-heading,
+      .pgn__form-label {
+        color: $tcs-charcoal; // was: #191B23
+      }
+
+      input[type=radio], input[type=checkbox] {
+        border: 1px solid $tcs-border-strong; // was: #C4C7CF
+
+        &:checked {
+          border-color: $tcs-dark-blue; // was: #15376D
+        }
+      }
+    }
+  }
+}
+
+@import "./header";
+@import "./footer";
+@import "./login";
+@import "./progress";
+@import "./tour";
+@import "./learning";
+@import "./discussion";
+@import "./account";
+@import "./profile";
+@import "./dates";
+@import "./extras";
+
+
+// Including dark theme
+@import "./dark";

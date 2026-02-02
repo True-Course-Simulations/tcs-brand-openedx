@@ -2,3 +2,15 @@
 
 // @use "./build/core/variables";
 // @use "./build/core/custom-media-breakpoints";
+
+// For --pgn-elevation-box-shadow-level-1, etc
+@use "~@openedx/paragon/styles/css/themes/light/abstraction-variables.css";
+
+// Imports custom-media-breakpoints.css
+@import './build/core/index.css';
+
+@import "~@openedx/paragon/dist/Button/mixins";
+
+@import "./variables";
+@import "./fonts";
+@import "./overrides";
