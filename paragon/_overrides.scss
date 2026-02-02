@@ -32,12 +32,6 @@ a:hover {
   background-color: rgba($tcs-dark-blue, 0.08);
 }
 
-// Make top nav feel more like a branded product header
-.site-header,
-.navbar {
-  border-bottom: 1px solid rgba($tcs-grey, 0.25);
-}
-
 .navbar-nav .nav-link {
   font-weight: 600;
 }
@@ -45,18 +39,6 @@ a:hover {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link[aria-current="page"] {
   color: $tcs-dark-blue;
-}
-
-// Make header logo larger across MFEs
-.site-header .logo img,
-.site-header .logo svg,
-header .logo img,
-header .logo svg,
-.navbar-brand img,
-.navbar-brand svg {
-  height: 44px;
-  max-height: 56px;
-  width: auto;
 }
 
 body {
@@ -68,11 +50,6 @@ body {
 
 code, pre, kbd, samp, .text-monospace {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-html {
-  width: 100%;
-  overflow-x: hidden;
 }
 
 #root .container-xl {
