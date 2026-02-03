@@ -9,7 +9,7 @@
         height: 32px;
     }
     h1 {
-        color: var(--pgn-color-text-base);
+        color: $text-color;
         font-size: 24px;
         line-height: 30px;
         font-weight: 700;
@@ -18,7 +18,7 @@
     .account-section {
         font-size: 14px;
         line-height: 20px;
-        color: var(--pgn-color-text-primary);
+        color: $text-color-primary;
         p {
             margin: 0 0 15px;
         }
@@ -27,17 +27,17 @@
             line-height: 24px;
             font-weight: 700;
             margin: 0 0 15px;
-            color: var(--pgn-color-text-base);
+            color: $text-color;
         }
     }
     .row {
-        @media (--pgn-size-breakpoint-min-width-md) {
+        @include media-breakpoint-up(md) {
             margin: 0;
         }
         .col-md-2 {
             flex: 100%;
             max-width: 100%;
-            @media (--pgn-size-breakpoint-min-width-md) {
+            @include media-breakpoint-up(md) {
                 flex: 240px;
                 max-width: 240px;
                 padding: 0 0 30px;
@@ -46,7 +46,7 @@
                 padding: 0;
                 &.position-sticky {
                     position: static !important;
-                    @media (--pgn-size-breakpoint-min-width-md) {
+                    @include media-breakpoint-up(md) {
                         position: sticky !important;
                     }
                 }
@@ -57,8 +57,8 @@
                         margin: 0 0 2px;
                         &.font-weight-bold {
                             a {
-                                background: var(--pgn-color-primary-light);
-                                color: var(--pgn-color-primary-base);
+                                background: $primary-light;
+                                color: $primary;
                                 text-decoration: none;
                             }
                         }
@@ -67,13 +67,13 @@
                             font-size: 14px;
                             font-weight: 500;
                             line-height: 20px;
-                            color: var(--pgn-color-primary-base);
+                            color: $primary;
                             text-decoration: none;
                             padding: 8px 12px;
                             border-radius: 6px;
                             &:hover {
-                                background: var(--pgn-color-primary-light);
-                                color: var(--pgn-color-primary-base);
+                                background: $primary-light;
+                                color: $primary;
                                 text-decoration: none;
                             }
                         }
@@ -84,12 +84,12 @@
         .col-md-10 {
             flex: 100%;
             max-width: 100%;
-            @media (--pgn-size-breakpoint-min-width-md) {
+            @include media-breakpoint-up(md) {
                 flex: 500px;
                 max-width: 500px;
                 padding: 0 0 0 50px;
             }
-            @media (--pgn-size-breakpoint-min-width-lg) {
+            @include media-breakpoint-up(lg) {
                 flex: 750px;
                 max-width: 750px;
             }
@@ -102,7 +102,7 @@
             font-size: 14px;
         }
         a.standalone-link {
-            color: var(--pgn-color-primary-base);
+            color: $primary;
         }
         button.btn-outline-danger {
             padding: 7px 13px !important;
@@ -115,16 +115,16 @@
     }
     .pgn-transition-replace-group + .form-group {
         border: 1px solid #E5E7EB;
-        border-left: 8px solid var(--pgn-color-primary-light);
+        border-left: 8px solid $primary-light;
         padding: 15px !important;
         margin: 0 0 15px !important;
         border-radius: 8px;
         font-size: 14px;
-        color: var(--pgn-color-text-base);
+        color: $text-color;
         h6 {
             font-weight: 600;
             font-size: 18px;
-            color: var(--pgn-color-text-base);
+            color: $text-color;
             margin: 5px 0 0 !important;
         }
         p {
@@ -133,7 +133,7 @@
                 &.btn-link {
                     font-weight: 600;
                     font-size: 16px;
-                    color: var(--pgn-color-primary-base);
+                    color: $primary;
                 }
             }
         }
@@ -141,33 +141,33 @@
             margin: 10px 0 0 !important;
             box-shadow: none;
             padding: 15px !important;
-            background: var(--pgn-color-primary-light) !important;
+            background: $primary-light !important;
             a {
-                color: var(--pgn-color-primary-base);
+                color: $primary;
             }
         }
     }
     .pgn-transition-replace-group {
         border: 1px solid #E5E7EB;
-        border-left: 8px solid var(--pgn-color-primary-light);
+        border-left: 8px solid $primary-light;
         padding: 15px !important;
         margin: 0 0 15px !important;
         border-radius: 8px;
         font-size: 14px;
-        color: var(--pgn-color-text-base);
+        color: $text-color;
         p.h6 {
             font-weight: 600;
             font-size: 16px;
-            color: var(--pgn-color-text-base);
+            color: $text-color;
             margin: 5px 0 0 !important;
         }
         p.small.text-muted, div.pgn__form-text.pgn__form-text-default  {
-            background: var(--pgn-color-primary-light);
+            background: $primary-light;
             padding: 10px 15px;
             border-radius: 6px;
             font-size: 14px;
             line-height: 20px;
-            color: var(--pgn-color-text-base) !important;
+            color: $text-color !important;
             margin: 10px 0 0 !important;
             &:empty {
                 display: none;
@@ -178,12 +178,12 @@
             p.text-truncate, p[data-hj-suppress="true"] {
                 font-weight: 600;
                 font-size: 16px;
-                color: var(--pgn-color-text-primary);
+                color: $text-color-primary;
                 margin: 5px 0 0 !important;
                 button {
                     font-weight: 600;
                     font-size: 16px;
-                    color: var(--pgn-color-primary-base);
+                    color: $primary;
                     margin: 0 !important;
                 }
             }
@@ -193,12 +193,12 @@
                     font-size: 18px;
                     font-weight: 600;
                     line-height: 24px;
-                    color: var(--pgn-color-text-base);
+                    color: $text-color;
                     margin: 0;
                 }
                 button {
                     padding: 7px 13px !important;
-                    border: 1px solid var(--pgn-color-primary-base) !important;
+                    border: 1px solid $primary !important;
                     color: #fff;
                     text-decoration: none;
                     font-size: 14px;
@@ -208,7 +208,7 @@
                     position: absolute;
                     right: 15px;
                     top: 15px;
-                    background: var(--pgn-color-primary-base);
+                    background: $primary;
                     svg {
                         display: none;
                     }
@@ -216,7 +216,7 @@
                 p {
                     .small.text-muted {
                         font-size: 16px;
-                        color: var(--pgn-color-text-primary) !important;
+                        color: $text-color-primary !important;
                         line-height: 20px;
                     }
                 }
@@ -230,7 +230,7 @@
                 font-size: 18px;
                 font-weight: 600;
                 line-height: 24px;
-                color: var(--pgn-color-text-base);
+                color: $text-color;
                 margin: 0;
             }
             >p {
@@ -240,14 +240,14 @@
                 margin: 0;
                 button {
                     padding: 7px 13px !important;
-                    border: 1px solid var(--pgn-color-primary-base) !important;
+                    border: 1px solid $primary !important;
                     color: #fff;
                     text-decoration: none;
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 20px;
                     margin: 0 0 0 15px !important;
-                    background: var(--pgn-color-primary-base);
+                    background: $primary;
                     border-radius: 8px;
                     &.btn-outline-primary {
                         background: #fff !important;
