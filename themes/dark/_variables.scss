@@ -1,15 +1,135 @@
-& {
-  --pgn-color-primary-base: var(--pgn-color-dark-primary-base);
-  --pgn-color-primary-light: var(--pgn-color-dark-primary-light);
-  --pgn-color-primary-border: var(--pgn-color-dark-primary-border);
-  --pgn-color-brand-base: var(--pgn-color-dark-brand-base);
-  --pgn-color-text-base: var(--pgn-color-dark-text-base);
-  --pgn-color-text-footer: var(--pgn-color-dark-text-footer);
-  --pgn-color-text-primary: var(--pgn-color-dark-text-primary);
-  --pgn-color-text-button: var(--pgn-color-dark-text-button);
-  --pgn-color-body-bg: var(--pgn-color-dark-body-bg);
-  --pgn-color-bg-light-overlay: var(--pgn-color-dark-bg-light-overlay);
-  --pgn-color-bg-hover: var(--pgn-color-dark-bg-hover);
-  --pgn-color-success-base: var(--pgn-color-dark-success-base);
-  --pgn-color-danger-base: var(--pgn-color-dark-danger-base);
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+// Typography
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+// --- TCS palette ---
+$tcs-red: #d52028;
+$tcs-grey: #587182;
+$tcs-light-blue: #57b1e4;
+$tcs-dark-blue: #144ea2;
+$tcs-charcoal: #1b1e1c;
+
+// --- Dark theme core ---
+$body-bg: #0D0D0E;
+$body-color: #F8F8F8;
+
+$primary: $tcs-light-blue;     // primary accents on dark
+$info: $tcs-light-blue;
+$danger: $tcs-red;
+$success: #54CF5E;             // keep if you like, or define a TCS green
+
+// Surfaces / text
+$primary-light: #292A2C;        // “surface” (cards, panels)
+$light-dark: #374151;           // secondary surface / borders
+$text-color: $body-color;
+$text-color-primary: #DDDFE2;
+$text-color-light: rgba(#F8F8F8, 0.72);
+
+// Borders + overlays
+$border-color: rgba($tcs-grey, 0.55);
+$light-overlay: rgba(#FFFFFF, 0.06);
+
+// Links
+$link-color: $primary;
+$link-hover-color: darken($link-color, 15%);
+
+$muted-link-color: $primary;
+$muted-inline-link-color: $primary;
+$muted-link-hover-color: darken($muted-link-color, 15%);
+$muted-inline-link-decoration-color: rgba($muted-inline-link-color, .3);
+$muted-inline-link-hover-color: darken($muted-inline-link-color, 15%);
+
+// Focus ring
+$focus-ring-color: rgba($tcs-light-blue, 0.45);
+
+// Buttons (optional)
+$btn-color: #0D0D0E;             // text on primary buttons (since primary is light)
+$hover-color: #383938;
+
+// Theme maps (Paragon uses these)
+$theme-colors-dark: () !default;
+$theme-colors-dark: map-merge(
+  (
+    "primary": $primary,
+    "success": $success,
+    "danger":  $danger,
+    "info":    $info,
+  ),
+  $theme-colors-dark
+);
+
+// Color ramps (keep your pattern)
+$primary-100: mix(white, $primary, 94%);
+$primary-200: mix(white, $primary, 75%);
+$primary-300: mix(white, $primary, 50%);
+$primary-400: mix(white, $primary, 25%);
+$primary-500: $primary;
+$primary-600: mix(black, $primary, 10%);
+$primary-700: mix(black, $primary, 20%);
+$primary-800: mix(black, $primary, 25%);
+$primary-900: mix(black, $primary, 30%);
+
+$success-100: mix(white, $success, 94%);
+$success-200: mix(white, $success, 75%);
+$success-300: mix(white, $success, 50%);
+$success-400: mix(white, $success, 25%);
+$success-500: $success;
+$success-600: mix(black, $success, 10%);
+$success-700: mix(black, $success, 20%);
+$success-800: mix(black, $success, 25%);
+$success-900: mix(black, $success, 30%);
+
+$danger-100: mix(white, $danger, 94%);
+$danger-200: mix(white, $danger, 75%);
+$danger-300: mix(white, $danger, 50%);
+$danger-400: mix(white, $danger, 25%);
+$danger-500: $danger;
+$danger-600: mix(black, $danger, 10%);
+$danger-700: mix(black, $danger, 20%);
+$danger-800: mix(black, $danger, 25%);
+$danger-900: mix(black, $danger, 30%);
+
+$theme-color-levels-dark: () !default;
+$theme-color-levels-dark: map-merge(
+  (
+    "primary-100": $primary-100,
+    "primary-200": $primary-200,
+    "primary-300": $primary-300,
+    "primary-400": $primary-400,
+    "primary-500": $primary-500,
+    "primary-600": $primary-600,
+    "primary-700": $primary-700,
+    "primary-800": $primary-800,
+    "primary-900": $primary-900,
+
+    "success-100": $success-100,
+    "success-200": $success-200,
+    "success-300": $success-300,
+    "success-400": $success-400,
+    "success-500": $success-500,
+    "success-600": $success-600,
+    "success-700": $success-700,
+    "success-800": $success-800,
+    "success-900": $success-900,
+
+    "danger-100": $danger-100,
+    "danger-200": $danger-200,
+    "danger-300": $danger-300,
+    "danger-400": $danger-400,
+    "danger-500": $danger-500,
+    "danger-600": $danger-600,
+    "danger-700": $danger-700,
+    "danger-800": $danger-800,
+    "danger-900": $danger-900,
+  ),
+  $theme-color-levels-dark
+);
+
+// Active + focus plumbing
+$component-active-bg: $primary;
+
+$input-focus-border-color: $component-active-bg;
+$input-btn-focus-color: $component-active-bg;
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color;
+$input-focus-box-shadow: $input-btn-focus-box-shadow;
