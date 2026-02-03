@@ -1465,21 +1465,64 @@ section[data-testid=sidebar-NOTIFICATIONS], section[data-testid=sidebar-DISCUSSI
     fill: var(--pgn-color-primary-500);
 }
 
-.theme-toggle-button{
-    .light-theme-icon > span, .dark-theme-icon > span{
-        color: var(--pgn-color-text-primary);
-    }
-    .toggle-switch {
-        .switch {
-            /* The slider */
-            .slider {
-                background-color: #ccc;
-                box-shadow: 0 0 1px #ccc;
-                &::before{
-                    transform: translateX(19px);
-                    background-color: var(--pgn-color-text-primary);
-                }
-            }
-        }
-    }
+/* Theme toggle (works across MFEs) */
+.theme-toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .light-theme-icon > span,
+  .dark-theme-icon > span {
+    color: var(--pgn-color-text-primary);
+  }
+
+  /* Make sure label.switch is sized/positioned */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin: 0;
+  }
+
+  /* Hide the native checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* Track */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.18);
+    transition: 0.25s;
+    border-radius: 34px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Knob */
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #fff;
+    transition: 0.25s;
+    border-radius: 50%;
+  }
+
+  /* Checked state (this is the important part) */
+  .switch input:checked + .slider::before {
+    transform: translateX(19px);
+  }
+
+  /* Optional: dark theme track tweak (if you use a body class) */
+  body.tcs-dark-theme & .slider {
+    background-color: rgba(255, 255, 255, 0.18);
+  }
 }
