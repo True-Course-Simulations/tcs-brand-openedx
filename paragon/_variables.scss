@@ -1,18 +1,18 @@
 // Use this file to set SASS variables for @edx/paragon
 // See _variables.scss in https://github.com/openedx/paragon/blob/master/scss/core/ for reference
 
-$primary-light: lighten($tcs-light-blue, 38%);
-$light-dark: $tcs-charcoal;
-$text-color: $tcs-charcoal; 
-$text-color-primary: darken($tcs-grey, 8%);
-$text-color-light: lighten($tcs-grey, 18%);
-
 // TCS palette
 $tcs-red: #d52028;
 $tcs-grey: #587182;
 $tcs-light-blue: #57b1e4;
 $tcs-dark-blue: #144ea2;
 $tcs-charcoal: #1b1e1c;
+
+$primary-light: lighten($tcs-light-blue, 38%);
+$light-dark: $tcs-charcoal;
+$text-color: $tcs-charcoal; 
+$text-color-primary: darken($tcs-grey, 8%);
+$text-color-light: lighten($tcs-grey, 18%);
 
 // Core mapping
 $primary: $tcs-dark-blue;
