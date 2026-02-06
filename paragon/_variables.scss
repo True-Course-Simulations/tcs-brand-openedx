@@ -2,17 +2,20 @@
 // See _variables.scss in https://github.com/openedx/paragon/blob/master/scss/core/ for reference
 
 // TCS palette
-$tcs-red: #d52028;
+$tcs-red: #d61f27;
 $tcs-grey: #587182;
+$tcs-darkest-grey: #141617;
+$tcs-dark-grey: #20262b;
 $tcs-light-blue: #57b1e4;
 $tcs-dark-blue: #144ea2;
 $tcs-charcoal: #1b1e1c;
+$tcs-grey-blue: #587082;
 
-$primary-light: lighten($tcs-light-blue, 38%);
+$primary-light: $tcs-light-blue;
 $light-dark: $tcs-charcoal;
-$text-color: $tcs-charcoal; 
-$text-color-primary: darken($tcs-grey, 8%);
-$text-color-light: lighten($tcs-grey, 18%);
+$text-color: $tcs-darkest-grey; 
+$text-color-primary: $tcs-dark-grey;
+$text-color-light: $tcs-dark-grey;
 
 // Core mapping
 $primary: $tcs-dark-blue;
@@ -23,10 +26,10 @@ $info: $tcs-light-blue;
 $secondary: $tcs-grey;
 
 // Make borders + subtle UI feel “designed”
-$border-color: rgba($tcs-grey, 0.35);
+$border-color: $tcs-dark-grey;
 
 // Focus rings
-$focus-ring-color: rgba($tcs-light-blue, 0.45);
+$focus-ring-color: $tcs-light-blue;
 
 // Slight rounding for buttons and inputs
 $border-radius: 0.625rem;
